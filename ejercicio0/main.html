@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    </head>
+
+    <body>
+
+        <div id="prueba"></div>
+    </body>
+
+
+    <script>
+        async function getFact(){
+            let respuesta = await fetch("http://127.0.0.1:1984");
+            
+            
+            respuestaJSON=await respuesta.json()
+            console.log(respuestaJSON)
+            console.log(respuestaJSON.fact)
+        
+            a = document.createElement("h1");
+            a.textContent = respuestaJSON.fact;
+            document.body.appendChild(a)
+            
+        }
+
+
+        getFact();
+    </script>
+</html>
